@@ -2,7 +2,7 @@ Project Initialized - 19-07-2021
 
 Assets Dependencies:
 
-1. Android Native Dialogs and Functions Plugin (Fantom)
+1. Android Native Dialogs and Functions Plugin (Fantom)*
     https://assetstore.unity.com/packages/tools/gui/android-native-dialogs-and-functions-plugin-106497
-2. UI Pack (Kenney)
-    https://www.kenney.nl/assets/ui-pack
+2. Fonts - Nunito (H) and Open Sans (B) (Google Fonts)
+    https://fonts.google.com/specimen/Nunito
