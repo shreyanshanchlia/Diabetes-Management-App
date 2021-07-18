@@ -1,0 +1,6 @@
+Project Initialized - 19-07-2021
+
+Assets Dependencies:
+1. Android Native Dialogs and Functions Plugin (Fantom)
+    https://assetstore.unity.com/packages/tools/gui/android-native-dialogs-and-functions-plugin-106497
+
