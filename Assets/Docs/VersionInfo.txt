@@ -6,3 +6,5 @@ Assets Dependencies:
     https://assetstore.unity.com/packages/tools/gui/android-native-dialogs-and-functions-plugin-106497
 2. Fonts - Nunito (H) and Open Sans (B) (Google Fonts)
     https://fonts.google.com/specimen/Nunito
+3. SaveGame Free Gold (BayAtGames)
+    https://assetstore.unity.com/packages/tools/input-management/save-game-free-gold-update-81519
