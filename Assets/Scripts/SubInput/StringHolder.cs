@@ -25,6 +25,11 @@ public class StringHolder : MonoBehaviour
         }
     }
 
+    public void SetString(int text)
+    {
+        SetString(text.ToString());
+    }
+
     void SetDefaultString()
     {
         if (defaultString == DefaultString.Date)

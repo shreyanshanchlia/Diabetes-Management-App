@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+// ReSharper disable once RedundantUsingDirective
 using FantomLib;
 using UnityEngine;
 
@@ -13,9 +14,11 @@ public class SugarReadingLog : MonoBehaviour
     {
         try
         {
+            //log base
             log.logType = Log.LogType.SugarReading;
             log.timeOfLog = DateTime.Now;
             log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            //custom log
             log.sugarReading = Convert.ToInt32(sugarReading.GetString());
 
 #if UNITY_EDITOR
