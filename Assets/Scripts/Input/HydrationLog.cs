@@ -1,0 +1,39 @@
+using System;
+using System.Globalization;
+// ReSharper disable once RedundantUsingDirective
+using FantomLib;
+using UnityEngine;
+
+public class HydrationLog : MonoBehaviour
+{
+    private Log log;
+
+    [SerializeField] private StringHolder startTime, waterDrank;
+    
+    public void Submit()
+    {
+        try
+        {
+            //log base
+            log.logType = Log.LogType.Meal;
+            log.timeOfLog = DateTime.Now;
+            log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            //custom log
+            log.glassesOfWater = Convert.ToInt32(waterDrank.GetString());
+
+#if UNITY_EDITOR
+            Debug.Log("Hydration Submitted");
+#else
+            AndroidPlugin.ShowToast($"Hydration Submitted\n{log.startTime}");
+#endif
+        }
+        catch (Exception e)
+        {
+#if UNITY_EDITOR
+            Debug.Log(e.Message);
+#else
+            AndroidPlugin.ShowToast(e.Message);
+#endif
+        }
+    }
+}
