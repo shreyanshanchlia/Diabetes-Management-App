@@ -1,6 +1,6 @@
 using System;
 
-public class Log
+public struct Log
 {
     public enum LogType
     {

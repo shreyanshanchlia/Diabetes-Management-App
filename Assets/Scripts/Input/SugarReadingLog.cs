@@ -11,15 +11,26 @@ public class SugarReadingLog : MonoBehaviour
     
     public void Submit()
     {
-        log.logType = Log.LogType.SugarReading;
-        log.timeOfLog = DateTime.Now;
-        log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
-        log.sugarReading = Convert.ToInt32(sugarReading.GetString());
-        
-        #if UNITY_EDITOR
+        try
+        {
+            log.logType = Log.LogType.SugarReading;
+            log.timeOfLog = DateTime.Now;
+            log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            log.sugarReading = Convert.ToInt32(sugarReading.GetString());
+
+#if UNITY_EDITOR
             Debug.Log("Sugar Reading Submitted");
-        #else
+#else
             AndroidPlugin.ShowToast("Sugar Reading Submitted");
-        #endif
+#endif
+        }
+        catch (Exception e)
+        {
+#if UNITY_EDITOR
+            Debug.Log(e.Message);
+#else
+            AndroidPlugin.ShowToast(e.Message);
+#endif
+        }
     }
 }
