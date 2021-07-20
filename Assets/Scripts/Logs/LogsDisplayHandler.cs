@@ -5,7 +5,7 @@ public class LogsDisplayHandler : MonoBehaviour
 {
     [SerializeField] private Transform logsHolder;
     [SerializeField] private GameObject logDisplayPrefab; 
-    [SerializeField] List<Log> logs;
+    List<Log> logs;
 
     public void ShowLogs()
     {
@@ -32,7 +32,8 @@ public class LogsDisplayHandler : MonoBehaviour
     {
         foreach (Log log in logs)
         {
-            Instantiate(logDisplayPrefab, logsHolder);
+            GameObject currentLog = Instantiate(logDisplayPrefab, logsHolder);
+            currentLog.GetComponent<LogHolder>().SetLog(log);
         }
     }
 }
