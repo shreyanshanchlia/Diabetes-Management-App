@@ -21,7 +21,7 @@ public class SugarReadingLog : MonoBehaviour
 #if UNITY_EDITOR
             Debug.Log("Sugar Reading Submitted");
 #else
-            AndroidPlugin.ShowToast("Sugar Reading Submitted");
+            AndroidPlugin.ShowToast($"Sugar Reading Submitted\n{log.startTime}");
 #endif
         }
         catch (Exception e)

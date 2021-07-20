@@ -446,5 +446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a63886774bd76746a8b7918f0f136f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultString: 1
   setText: 1
   ShowStringText: {fileID: 1537297016434135524}
