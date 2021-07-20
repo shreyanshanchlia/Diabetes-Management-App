@@ -20,7 +20,8 @@ public class SugarReadingLog : MonoBehaviour
             log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
             //custom log
             log.sugarReading = Convert.ToInt32(sugarReading.GetString());
-
+            
+            SaveSystem.SaveUserData(log);
 #if UNITY_EDITOR
             Debug.Log("Sugar Reading Submitted");
 #else

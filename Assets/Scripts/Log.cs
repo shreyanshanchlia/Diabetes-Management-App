@@ -1,5 +1,6 @@
 using System;
 
+[Serializable]
 public struct Log
 {
     public enum LogType

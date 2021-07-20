@@ -21,6 +21,7 @@ public class SleepLog : MonoBehaviour
             //custom log
             log.endTime = DateTime.ParseExact(endTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
 
+            SaveSystem.SaveUserData(log);
 #if UNITY_EDITOR
             Debug.Log("Sleep Submitted");
 #else

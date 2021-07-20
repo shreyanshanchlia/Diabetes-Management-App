@@ -72,9 +72,13 @@ public static class SaveSystem
 #endif
     }
 
-    public static List<Log> GetUserData()
+    public static UserData GetUserData()
     {
-        return SaveGame.Load("userData", new UserData()).logs;
+        if (!SaveGame.Exists("userData"))
+        {
+            return new UserData();
+        }
+        return SaveGame.Load("userData", new UserData());
     }
     
 #if UNITY_EDITOR

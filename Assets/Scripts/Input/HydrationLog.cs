@@ -15,12 +15,13 @@ public class HydrationLog : MonoBehaviour
         try
         {
             //log base
-            log.logType = Log.LogType.Meal;
+            log.logType = Log.LogType.Hydration;
             log.timeOfLog = DateTime.Now;
             log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
             //custom log
             log.glassesOfWater = Convert.ToInt32(waterDrank.GetString());
-
+            
+            SaveSystem.SaveUserData(log);
 #if UNITY_EDITOR
             Debug.Log("Hydration Submitted");
 #else
