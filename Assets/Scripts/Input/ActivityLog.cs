@@ -15,7 +15,7 @@ public class ActivityLog : MonoBehaviour
         try
         { 
             //log base
-            log.logType = Log.LogType.InsulinTaken;
+            log.logType = Log.LogType.Activity;
             log.timeOfLog = DateTime.Now;
             log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
             //custom log
