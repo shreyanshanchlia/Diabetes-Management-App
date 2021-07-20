@@ -1,17 +1,40 @@
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class LogsDisplayHandler : MonoBehaviour
 {
     [SerializeField] private Transform logsHolder;
-    [SerializeField] private GameObject logDisplayPrefab; 
+    [SerializeField] private GameObject logDisplayPrefab;
+    [SerializeField] private StringHolder startDateString, endDateString;
+
+    private DateTime startDate, endDate;
+    private bool useDateFilter = false;
     List<Log> logs;
 
     public void ShowLogs()
     {
         LoadLogs();
         DeleteExisting();
+        SetDateFilter();
         DisplayLogs();
+    }
+
+    void SetDateFilter()
+    {
+        try
+        {
+            startDate = DateTime.ParseExact(startDateString.GetString(), "yyyy/MM/dd", CultureInfo.InvariantCulture);
+            endDate = DateTime.ParseExact(endDateString.GetString(), "yyyy/MM/dd", CultureInfo.InvariantCulture);
+            useDateFilter = true;
+        }
+        catch (Exception e)
+        {
+            useDateFilter = false;
+        }
     }
 
     void DeleteExisting()
@@ -26,14 +49,18 @@ public class LogsDisplayHandler : MonoBehaviour
     void LoadLogs()
     {
         logs = SaveSystem.GetUserData().logs;
+        logs = logs.OrderBy(t => t.startTime).ToList();
     }
 
     void DisplayLogs()
     {
         foreach (Log log in logs)
         {
-            GameObject currentLog = Instantiate(logDisplayPrefab, logsHolder);
-            currentLog.GetComponent<LogHolder>().SetLog(log);
+            if (!useDateFilter || (startDate < log.startTime && log.endTime > endDate))
+            {
+                GameObject currentLog = Instantiate(logDisplayPrefab, logsHolder);
+                currentLog.GetComponent<LogHolder>().SetLog(log);
+            }
         }
     }
 }

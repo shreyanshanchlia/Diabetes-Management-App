@@ -2165,6 +2165,8 @@ GameObject:
   - component: {fileID: 425457059}
   - component: {fileID: 425457058}
   - component: {fileID: 425457057}
+  - component: {fileID: 425457061}
+  - component: {fileID: 425457060}
   m_Layer: 5
   m_Name: From Date
   m_TagString: Untagged
@@ -2236,7 +2238,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 425457058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 425457061}
+        m_TargetAssemblyTypeName: FantomLib.DatePickerController, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &425457058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2275,6 +2289,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425457055}
   m_CullTransparentMesh: 1
+--- !u!114 &425457060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425457055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a63886774bd76746a8b7918f0f136f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultString: 0
+  setText: 1
+  ShowStringText: {fileID: 821002696}
+--- !u!114 &425457061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425457055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d44dc0de29903ce49b265304620afe17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDate: 
+  resultDateFormat: yyyy/M/d
+  style: android:Theme.DeviceDefault.Light.Dialog.Alert
+  OnResult:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 425457060}
+        m_TargetAssemblyTypeName: StringHolder, Assembly-CSharp
+        m_MethodName: SetString
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &426304359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4002,6 +4061,8 @@ GameObject:
   - component: {fileID: 537500918}
   - component: {fileID: 537500917}
   - component: {fileID: 537500916}
+  - component: {fileID: 537500920}
+  - component: {fileID: 537500919}
   m_Layer: 5
   m_Name: To Date
   m_TagString: Untagged
@@ -4073,7 +4134,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 537500917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 537500920}
+        m_TargetAssemblyTypeName: FantomLib.DatePickerController, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &537500917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4112,6 +4185,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537500914}
   m_CullTransparentMesh: 1
+--- !u!114 &537500919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537500914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a63886774bd76746a8b7918f0f136f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultString: 0
+  setText: 1
+  ShowStringText: {fileID: 700993120}
+--- !u!114 &537500920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537500914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d44dc0de29903ce49b265304620afe17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDate: 
+  resultDateFormat: yyyy/M/d
+  style: android:Theme.DeviceDefault.Light.Dialog.Alert
+  OnResult:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 537500919}
+        m_TargetAssemblyTypeName: StringHolder, Assembly-CSharp
+        m_MethodName: SetString
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &540488361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4825,7 +4943,7 @@ GameObject:
   - component: {fileID: 700993121}
   - component: {fileID: 700993120}
   m_Layer: 5
-  m_Name: Level Text (TMP)
+  m_Name: Date Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5470,7 +5588,7 @@ GameObject:
   - component: {fileID: 821002697}
   - component: {fileID: 821002696}
   m_Layer: 5
-  m_Name: Level Text (TMP)
+  m_Name: Date Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7844,7 +7962,7 @@ GameObject:
   - component: {fileID: 1372193551}
   - component: {fileID: 1372193550}
   m_Layer: 5
-  m_Name: 'Level Label Text (TMP) '
+  m_Name: 'To Label Text (TMP) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10149,6 +10267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logsHolder: {fileID: 1843835905}
   logDisplayPrefab: {fileID: 8909627348698513024, guid: fc52e8a5ab2710a4a892ed78b2c810e9, type: 3}
+  startDateString: {fileID: 425457060}
+  endDateString: {fileID: 537500919}
 --- !u!1 &1698020392
 GameObject:
   m_ObjectHideFlags: 0
@@ -12325,7 +12445,7 @@ GameObject:
   - component: {fileID: 2035606258}
   - component: {fileID: 2035606257}
   m_Layer: 5
-  m_Name: 'Level Label Text (TMP) '
+  m_Name: 'From Label Text (TMP) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
