@@ -42,3 +42,11 @@ Release Versions:
 - Time - 12:45 PM
 - Date - 21 July 2021
 - Updates - Log Date Filters fixed 
+
+0.1.4:
+- Build State - development
+- Build Size - 18.2 MB
+- Dev C.Time - 21 hours
+- Time - 01:45 PM
+- Date - 21 July 2021
+- Updates - Log Date Filters fixed 

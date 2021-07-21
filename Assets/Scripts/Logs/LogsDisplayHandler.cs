@@ -48,7 +48,7 @@ public class LogsDisplayHandler : MonoBehaviour
 #endif
         }
     }
-
+    
     void DeleteExisting()
     {
         int childs = logsHolder.childCount;
@@ -68,7 +68,7 @@ public class LogsDisplayHandler : MonoBehaviour
     {
         foreach (Log log in logs)
         {
-            if (!useDateFilter || (startDate <= log.startTime && endDate.AddDays(1) >= log.endTime))
+            if (!useDateFilter || (startDate.Date <= log.startTime && log.startTime >= endDate.Date.AddDays(1).AddSeconds(-1)))
             {
                 GameObject currentLog = Instantiate(logDisplayPrefab, logsHolder);
                 currentLog.GetComponent<LogHolder>().SetLog(log);
