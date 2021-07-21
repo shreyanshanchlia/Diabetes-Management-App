@@ -17,9 +17,9 @@ public class ActivityLog : MonoBehaviour
             //log base
             log.logType = Log.LogType.Activity;
             log.timeOfLog = DateTime.Now;
-            log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            log.startTime = DateTime.ParseExact(startTime.GetString(), "H:mm", CultureInfo.InvariantCulture);
             //custom log
-            log.endTime = DateTime.ParseExact(endTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            log.endTime = DateTime.ParseExact(endTime.GetString(), "H:mm", CultureInfo.InvariantCulture);
             if (activityIntensity.GetString() == "1") log.intensityOfActivity = Log.IntensityOfActivity.Low;
             if (activityIntensity.GetString() == "2") log.intensityOfActivity = Log.IntensityOfActivity.Medium;
             if (activityIntensity.GetString() == "3") log.intensityOfActivity = Log.IntensityOfActivity.High;

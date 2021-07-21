@@ -17,9 +17,9 @@ public class SleepLog : MonoBehaviour
             //log base
             log.logType = Log.LogType.Sleep;
             log.timeOfLog = DateTime.Now;
-            log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            log.startTime = DateTime.ParseExact(startTime.GetString(), "H:mm", CultureInfo.InvariantCulture);
             //custom log
-            log.endTime = DateTime.ParseExact(endTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            log.endTime = DateTime.ParseExact(endTime.GetString(), "H:mm", CultureInfo.InvariantCulture);
 
             SaveSystem.SaveUserData(log);
 #if UNITY_EDITOR

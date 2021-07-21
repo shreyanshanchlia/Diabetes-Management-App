@@ -8,12 +8,14 @@ public class StringHolder : MonoBehaviour
     [SerializeField] private DefaultString defaultString;
     [SerializeField] private bool setText;
     [SerializeField] private TextMeshProUGUI ShowStringText;
+    [SerializeField] private string customText;
 
     public enum DefaultString
     {
         None,
         Time,
-        Date
+        Date,
+        Custom
     };
     
     public void SetString(string text)
@@ -38,7 +40,11 @@ public class StringHolder : MonoBehaviour
         }
         if (defaultString == DefaultString.Time)
         {
-            SetString(DateTime.Now.ToShortTimeString());
+            SetString(DateTime.Now.ToString("H:mm"));
+        }
+        if (defaultString == DefaultString.Custom)
+        {
+            SetString(customText);
         }
     }
     private void Start()

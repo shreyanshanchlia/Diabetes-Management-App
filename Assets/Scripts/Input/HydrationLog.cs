@@ -8,7 +8,7 @@ public class HydrationLog : MonoBehaviour
 {
     private Log log;
 
-    [SerializeField] private StringHolder startTime, waterDrank;
+    [SerializeField] private StringHolder waterDrank;
     
     public void Submit()
     {
@@ -17,7 +17,7 @@ public class HydrationLog : MonoBehaviour
             //log base
             log.logType = Log.LogType.Hydration;
             log.timeOfLog = DateTime.Now;
-            log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            log.startTime = DateTime.Now;
             //custom log
             log.glassesOfWater = Convert.ToInt32(waterDrank.GetString());
             

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class LogsDisplayHandler : MonoBehaviour
 {
@@ -14,6 +13,11 @@ public class LogsDisplayHandler : MonoBehaviour
     private DateTime startDate, endDate;
     private bool useDateFilter = false;
     List<Log> logs;
+
+    private void Start()
+    {
+        ShowLogs();
+    }
 
     public void ShowLogs()
     {

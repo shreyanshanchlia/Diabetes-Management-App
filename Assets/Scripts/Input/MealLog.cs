@@ -17,7 +17,7 @@ public class MealLog : MonoBehaviour
             //log base
             log.logType = Log.LogType.Meal;
             log.timeOfLog = DateTime.Now;
-            log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            log.startTime = DateTime.ParseExact(startTime.GetString(), "H:mm", CultureInfo.InvariantCulture);
             //custom log
             log.food = mealTaken.GetString();
 

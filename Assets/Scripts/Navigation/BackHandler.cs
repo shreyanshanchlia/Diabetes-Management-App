@@ -13,14 +13,6 @@ public class BackHandler : MonoBehaviour
         BackInterface();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            BackInterface();
-        }
-    }
-
     public void BackInterface()
     {
         if (panels.Count > 0)

@@ -17,7 +17,7 @@ public class InsulinTakenLog : MonoBehaviour
             //log base
             log.logType = Log.LogType.InsulinTaken;
             log.timeOfLog = DateTime.Now;
-            log.startTime = DateTime.ParseExact(startTime.GetString(), "HH:mm", CultureInfo.InvariantCulture);
+            log.startTime = DateTime.ParseExact(startTime.GetString(), "H:mm", CultureInfo.InvariantCulture);
             //custom log
             log.insulinQuantity = Convert.ToInt32(insulinQuantity.GetString());
             if (insulinType.GetString() == "1") log.typeOfInsulinTaken = Log.TypeOfInsulin.Bolus;

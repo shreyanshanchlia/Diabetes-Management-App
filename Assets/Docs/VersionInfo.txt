@@ -8,3 +8,29 @@ Assets Dependencies:
     https://fonts.google.com/specimen/Nunito
 3. SaveGame Free Gold (BayAtGames)
     https://assetstore.unity.com/packages/tools/input-management/save-game-free-gold-update-81519
+
+Release Versions:
+
+0.0.1:
+- Build State - development
+- Build Size - 18.2 MB
+- Dev C.Time - 8 hours
+- Time - 05:40 PM
+- Date - 20 July 2021
+- Updates - UI Dashboard, (Blood Sugar) Input Working, Back to return to previous Screen.
+
+0.1.1:
+- Build State - development
+- Build Size - 18.2 MB
+- Dev C.Time - 24 hours
+- Time - 03:05 AM
+- Date - 21 July 2021
+- Updates - (Insulin Taken, Activity, Meal Taken, Sleep Cycle, Hydration) Input Not Working, UI Logs, Display Logs, Logs Filter with Date.
+
+0.1.2:
+- Build State - development
+- Build Size - 18.2 MB
+- Dev C.Time - 27 hours
+- Time - 12:05 PM
+- Date - 21 July 2021
+- Updates - Logs Filter with Date Called, Changed to Panel Prefabs.
