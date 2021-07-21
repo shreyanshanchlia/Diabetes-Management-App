@@ -1,4 +1,4 @@
-Project Initialized - 19-07-2021
+Project Initialized - 18-07-2021 11:20 PM
 
 Assets Dependencies:
 
@@ -22,7 +22,7 @@ Release Versions:
 0.1.1:
 - Build State - development
 - Build Size - 18.2 MB
-- Dev C.Time - 24 hours
+- Dev C.Time - 16 hours
 - Time - 03:05 AM
 - Date - 21 July 2021
 - Updates - (Insulin Taken, Activity, Meal Taken, Sleep Cycle, Hydration) Input Not Working, UI Logs, Display Logs, Logs Filter with Date.
@@ -30,7 +30,15 @@ Release Versions:
 0.1.2:
 - Build State - development
 - Build Size - 18.2 MB
-- Dev C.Time - 27 hours
+- Dev C.Time - 19 hours
 - Time - 12:05 PM
 - Date - 21 July 2021
 - Updates - Logs Filter with Date Called, Changed to Panel Prefabs.
+
+0.1.3:
+- Build State - development
+- Build Size - 18.2 MB
+- Dev C.Time - 20 hours
+- Time - 12:45 PM
+- Date - 21 July 2021
+- Updates - Log Date Filters fixed 
