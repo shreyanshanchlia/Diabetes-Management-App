@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using UnityEngine;
+// ReSharper disable once RedundantUsingDirective
+using FantomLib;
 
 public class LogsDisplayHandler : MonoBehaviour
 {
@@ -31,13 +33,19 @@ public class LogsDisplayHandler : MonoBehaviour
     {
         try
         {
-            startDate = DateTime.ParseExact(startDateString.GetString(), "yyyy/MM/dd", CultureInfo.InvariantCulture);
-            endDate = DateTime.ParseExact(endDateString.GetString(), "yyyy/MM/dd", CultureInfo.InvariantCulture);
+            startDate = DateTime.ParseExact(startDateString.GetString(), "yyyy/M/d", CultureInfo.InvariantCulture);
+            endDate = DateTime.ParseExact(endDateString.GetString(), "yyyy/M/d", CultureInfo.InvariantCulture);
             useDateFilter = true;
         }
         catch (Exception e)
         {
             useDateFilter = false;
+            
+#if UNITY_EDITOR
+            Debug.Log(e.Message + " Loading All");
+#else
+            AndroidPlugin.ShowToast(e.Message);
+#endif
         }
     }
 
@@ -60,7 +68,7 @@ public class LogsDisplayHandler : MonoBehaviour
     {
         foreach (Log log in logs)
         {
-            if (!useDateFilter || (startDate < log.startTime && log.endTime > endDate))
+            if (!useDateFilter || (startDate <= log.startTime && endDate.AddDays(1) >= log.endTime))
             {
                 GameObject currentLog = Instantiate(logDisplayPrefab, logsHolder);
                 currentLog.GetComponent<LogHolder>().SetLog(log);
