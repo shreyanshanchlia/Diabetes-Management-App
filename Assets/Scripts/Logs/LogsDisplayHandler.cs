@@ -8,17 +8,21 @@ using FantomLib;
 
 public class LogsDisplayHandler : MonoBehaviour
 {
+    public bool showLogs = true;
     [SerializeField] private Transform logsHolder;
     [SerializeField] private GameObject logDisplayPrefab;
     [SerializeField] private StringHolder startDateString, endDateString;
 
-    private DateTime startDate, endDate;
+    [HideInInspector] public DateTime startDate, endDate;
     private bool useDateFilter = false;
     List<Log> logs;
 
     private void Start()
     {
-        ShowLogs();
+        if (showLogs)
+        {
+            ShowLogs();
+        }
     }
 
     public void ShowLogs()
@@ -58,10 +62,24 @@ public class LogsDisplayHandler : MonoBehaviour
         }
     }
     
-    void LoadLogs()
+    public void LoadLogs()
     {
         logs = SaveSystem.GetUserData().logs;
         logs = logs.OrderBy(t => t.startTime).ToList();
+    }
+
+    public List<Log> GetLogsFiltered()
+    {
+        List<Log> filteredLogList = new List<Log>();
+        foreach (Log log in logs)
+        {
+            if (startDate.Date <= log.startTime && log.startTime <= endDate.Date.AddDays(1).AddSeconds(-1))
+            {
+                filteredLogList.Add(log);
+            }
+        }
+        
+        return filteredLogList;
     }
 
     void DisplayLogs()
