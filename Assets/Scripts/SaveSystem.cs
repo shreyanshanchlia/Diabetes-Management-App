@@ -14,7 +14,16 @@ public static class SaveSystem
         PrintUserInfo();
 #endif
     }
-    
+
+    public static UserInfo GetUserInfo()
+    {
+        if (SaveGame.Exists("userInfo"))
+        {
+            return SaveGame.Load<UserInfo>("userInfo");
+        }
+        return new UserInfo();
+    }
+
 #if UNITY_EDITOR
     [MenuItem("SaveSystem/UserInfo/Print")]
     public static void PrintUserInfo()
@@ -67,9 +76,22 @@ public static class SaveSystem
         userData.logs.Add(log);
         
         SaveGame.Save("userData", userData);
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         PrintUserData();
-#endif
+        #endif
+    }
+
+    public static void SaveUserData(Achievement achievement)
+    {
+        UserData userData = SaveGame.Load("userData", new UserData());
+        
+        if (userData.achievements == null) userData.achievements = new List<Achievement>();
+        userData.achievements.Add(achievement);
+        
+        SaveGame.Save("userData", userData);
+    #if UNITY_EDITOR
+        PrintUserData();
+    #endif
     }
 
     public static UserData GetUserData()
@@ -81,7 +103,7 @@ public static class SaveSystem
         return SaveGame.Load("userData", new UserData());
     }
     
-#if UNITY_EDITOR
+    #if UNITY_EDITOR
     [MenuItem("SaveSystem/UserData/PrintLatest")]
     public static void PrintUserData()
     {
@@ -94,7 +116,8 @@ public static class SaveSystem
     {
         SaveGame.Delete("userData");
     }
-#endif
+    #endif
+    
     #endregion
 }
 
@@ -104,6 +127,7 @@ public struct Credentials
     public string email;
     public string password;
 }
+
 public struct UserInfo
 {
     public enum Gender{Male, Female, Other}
@@ -113,10 +137,21 @@ public struct UserInfo
     public Gender gender;
     public float weight;    //in kgs
     public float height;    //in inches
+    
+    public Preferences preferences;
+}
+
+public struct Preferences
+{
+    public DailyChallengePreferences dailyChallengePreferences;
+    public struct DailyChallengePreferences
+    {
+        public int sugarLogCountTarget;
+    }
 }
 
 public struct UserData
 {
-    //have log data here
     public List<Log> logs;
+    public List<Achievement> achievements;
 }

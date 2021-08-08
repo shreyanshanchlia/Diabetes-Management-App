@@ -26,6 +26,7 @@ public struct Log
         High
     }
 
+    public int logId; 
     public LogType logType;
 
     public DateTime timeOfLog;
