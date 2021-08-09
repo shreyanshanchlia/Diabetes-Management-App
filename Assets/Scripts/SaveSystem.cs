@@ -84,21 +84,17 @@ public static class SaveSystem
     public static void SaveUserData(Achievement achievement)
     {
         UserData userData = SaveGame.Load("userData", new UserData());
-        
-        if (userData.achievements == null) userData.achievements = new List<Achievement>();
+
+        if (userData.achievements == null)
+        {
+            userData.achievements = new List<Achievement>();
+        }
         userData.achievements.Add(achievement);
         
         SaveGame.Save("userData", userData);
     #if UNITY_EDITOR
-        PrintUserData();
+        Debug.Log($"achievement {achievement.achievementId} set.");
     #endif
-    }
-
-    public static void SaveUserAchievement(int achievementId, dynamic achievement)
-    {
-        SaveGame.Save<dynamic>($"Achievement{achievementId}", achievement);
-        
-        Debug.Log(typeof(Achievement).ToString());
     }
 
     public static UserData GetUserData()
@@ -110,15 +106,6 @@ public static class SaveSystem
         return SaveGame.Load("userData", new UserData());
     }
 
-    public static dynamic GetAchievement(int achievementId)
-    {
-        if (SaveGame.Exists($"Achievement{achievementId}"))
-        {
-            return SaveGame.Load<dynamic>($"Achievement{achievementId}");
-        }
-        return null;
-    }
-    
     #if UNITY_EDITOR
     [MenuItem("SaveSystem/UserData/PrintLatest")]
     public static void PrintUserData()
@@ -133,8 +120,24 @@ public static class SaveSystem
         SaveGame.Delete("userData");
     }
     #endif
-    
     #endregion
+
+    //#region Achievements
+    //
+    // public static void SaveAchievement(int achievementId, Achievement achievement)
+    // {
+    //     SaveGame.Save($"Achievement{achievementId}", achievement);
+    // }
+    // public static Achievement GetAchievement(int achievementId)
+    // {
+    //     if (SaveGame.Exists($"Achievement{achievementId}"))
+    //     {
+    //         return SaveGame.Load<Achievement>($"Achievement{achievementId}");
+    //     }
+    //     return null;
+    // }
+
+    //#endregion
 }
 
 

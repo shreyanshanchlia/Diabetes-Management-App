@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public static class AchievementsManager
 {
@@ -11,21 +12,23 @@ public static class AchievementsManager
 
     public static void AchievementCurrentDayBloodSugarLogCountCheck()
     {
-        bool achievedCurrentDayBloodSugarLogCount = GetAchievements().Where(t =>
-            SaveSystem.GetAchievement(t.achievementId).GetType() == typeof(AchievementBloodSugarLogCount)
-        ).ToList().Count == 1;
+        Debug.Log("Mein nahi chalunga");
+        bool achievedCurrentDayBloodSugarLogCount = GetAchievementsPresentDay()
+            .Where(t => t.achievementMode == Achievement.AchievementMode.DailyChallenge 
+                        && t.dailyChallenge == Achievement.DailyChallenge.BloodSugarLogCount).ToList().Count == 1;
+        Debug.Log("achievedCurrentDayBloodSugarLogCount " + achievedCurrentDayBloodSugarLogCount);
         if (!achievedCurrentDayBloodSugarLogCount)
         {
             if (SaveSystem.GetUserData().logs.Where(t => t.timeOfLog == DateTime.Today && t.logType == Log.LogType.SugarReading).ToList().Count >= SaveSystem.GetUserInfo().preferences.dailyChallengePreferences.sugarLogCountTarget)
             {
-                AchievementBloodSugarLogCount achievement = new AchievementBloodSugarLogCount();
-                achievement.SetAchievement();
-                SaveSystem.SaveUserAchievement(achievement.achievementId, achievement);
+                Achievement achievement = new Achievement();
+                achievement.SetAchievement(Achievement.AchievementMode.DailyChallenge, Achievement.DailyChallenge.BloodSugarLogCount,"");
+                SaveSystem.SaveUserData(achievement);
             }
         }
     }
 
-    static List<Achievement> GetAchievements()
+    static List<Achievement> GetAchievementsPresentDay()
     {
         List<Achievement> achievements = SaveSystem.GetUserData().achievements;
         achievements = achievements.Where(t => t.achieveDateTime.Date == DateTime.Today).ToList();
