@@ -6,10 +6,13 @@ public class Achievement
     public DateTime achieveDateTime;
     public string achievementDescription;
     
-    public virtual void SetAchievement()
+    public virtual void SetAchievement(string description = "")
     {
         achievementId = SaveSystem.GetUserData().achievements.Count;
         achieveDateTime = DateTime.Now;
+        achievementDescription = description;
+        
+        SaveSystem.SaveUserData(this);
     }
 }
 

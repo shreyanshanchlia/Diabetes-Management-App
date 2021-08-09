@@ -1,20 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BayatGames.SaveGameFree;
-using UnityEngine;
 
-public class AchievementsManager : MonoBehaviour
+public static class AchievementsManager
 {
-    public void GiveDailyAchievementsCheck()
+    public static void GiveDailyAchievementsCheck()
     {
         AchievementCurrentDayBloodSugarLogCountCheck();
     }
 
-    public void AchievementCurrentDayBloodSugarLogCountCheck()
+    public static void AchievementCurrentDayBloodSugarLogCountCheck()
     {
         bool achievedCurrentDayBloodSugarLogCount = GetAchievements().Where(t =>
-            SaveGame.Load<dynamic>($"Achievement{t.achievementId}").GetType() == typeof(AchievementBloodSugarLogCount)
+            SaveSystem.GetAchievement(t.achievementId).GetType() == typeof(AchievementBloodSugarLogCount)
         ).ToList().Count == 1;
         if (!achievedCurrentDayBloodSugarLogCount)
         {
@@ -22,17 +20,18 @@ public class AchievementsManager : MonoBehaviour
             {
                 AchievementBloodSugarLogCount achievement = new AchievementBloodSugarLogCount();
                 achievement.SetAchievement();
+                SaveSystem.SaveUserAchievement(achievement.achievementId, achievement);
             }
         }
     }
 
-    List<Achievement> GetAchievements()
+    static List<Achievement> GetAchievements()
     {
         List<Achievement> achievements = SaveSystem.GetUserData().achievements;
         achievements = achievements.Where(t => t.achieveDateTime.Date == DateTime.Today).ToList();
         return achievements;
     }
-    List<Achievement> GetAchievements(DateTime date)
+    static List<Achievement> GetAchievements(DateTime date)
     {
         List<Achievement> achievements = SaveSystem.GetUserData().achievements;
         achievements = achievements.Where(t => t.achieveDateTime.Date == date.Date).ToList();

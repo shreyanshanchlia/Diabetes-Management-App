@@ -22,6 +22,8 @@ public class SugarReadingLog : MonoBehaviour
             log.sugarReading = Convert.ToInt32(sugarReading.GetString());
             
             SaveSystem.SaveUserData(log);
+            AchievementsManager.AchievementCurrentDayBloodSugarLogCountCheck();
+
 #if UNITY_EDITOR
             Debug.Log("Sugar Reading Submitted");
 #else

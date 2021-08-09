@@ -94,6 +94,13 @@ public static class SaveSystem
     #endif
     }
 
+    public static void SaveUserAchievement(int achievementId, dynamic achievement)
+    {
+        SaveGame.Save<dynamic>($"Achievement{achievementId}", achievement);
+        
+        Debug.Log(typeof(Achievement).ToString());
+    }
+
     public static UserData GetUserData()
     {
         if (!SaveGame.Exists("userData"))
@@ -101,6 +108,15 @@ public static class SaveSystem
             return new UserData();
         }
         return SaveGame.Load("userData", new UserData());
+    }
+
+    public static dynamic GetAchievement(int achievementId)
+    {
+        if (SaveGame.Exists($"Achievement{achievementId}"))
+        {
+            return SaveGame.Load<dynamic>($"Achievement{achievementId}");
+        }
+        return null;
     }
     
     #if UNITY_EDITOR
