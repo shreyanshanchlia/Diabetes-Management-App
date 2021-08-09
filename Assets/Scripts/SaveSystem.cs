@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using BayatGames.SaveGameFree;
 using UnityEditor;
 using UnityEngine;
@@ -84,14 +85,14 @@ public static class SaveSystem
     public static void SaveUserData(Achievement achievement)
     {
         UserData userData = SaveGame.Load("userData", new UserData());
-        
-        if (userData.achievements == null) userData.achievements = new List<Achievement>();
+
+        if (userData.achievements == null)
+        {
+            userData.achievements = new List<Achievement>();
+        }
         userData.achievements.Add(achievement);
         
         SaveGame.Save("userData", userData);
-    #if UNITY_EDITOR
-        PrintUserData();
-    #endif
     }
 
     public static void SaveUserAchievement(int achievementId, dynamic achievement)
@@ -125,12 +126,26 @@ public static class SaveSystem
     {
         UserData userData = SaveGame.Load("userData", new UserData());
         Debug.Log($"LatestUserData - \n{userData.logs[userData.logs.Count-1].logType}");
+        Debug.Log($"Achievement0 = {SaveGame.Load($"Achievement0", new Achievement()).achieveDateTime}");
+        Debug.Log($"Latest Achievement - \n{userData.achievements[userData.achievements.Count-1].achievementId}");
     }
     
     [MenuItem("SaveSystem/UserData/DeleteUserData")]
     public static void DeleteUserData()
     {
         SaveGame.Delete("userData");
+    }
+    [MenuItem("SaveSystem/UserData/DeleteAchievements")]
+    public static void DeleteAchievementsData()
+    {
+        var userData = SaveGame.Load("userData", new UserData());
+        int achievementsCount = userData.achievements.OrderByDescending(t => t.achievementId).First().achievementId;
+        userData.achievements = new List<Achievement>();
+        SaveGame.Save("userData", userData);
+        for (int i = 0; i < achievementsCount; i++)
+        {
+            SaveGame.Delete($"Achievement{i}");
+        }
     }
     #endif
     
