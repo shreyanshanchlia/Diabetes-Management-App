@@ -24,6 +24,21 @@ public static class AchievementsManager
             }
         }
     }
+    public static void AchievementCurrentDayInsulinTakenLogCountCheck()
+    {
+        bool achievedCurrentDayInsulinTakenLogCount = GetAchievements().Where(t =>
+            SaveSystem.GetAchievement(t.achievementId).GetType() == typeof(AchievementInsulinCount)
+        ).ToList().Count == 1;
+        if (!achievedCurrentDayInsulinTakenLogCount)
+        {
+            if (SaveSystem.GetUserData().logs.Where(t => t.timeOfLog == DateTime.Today && t.logType == Log.LogType.InsulinTaken).ToList().Count >= SaveSystem.GetUserInfo().preferences.dailyChallengePreferences.insulinTakenLogCountTarget)
+            {
+                AchievementInsulinCount achievement = new AchievementInsulinCount();
+                achievement.SetAchievement();
+                SaveSystem.SaveUserAchievement(achievement.achievementId, achievement);
+            }
+        }
+    }
 
     static List<Achievement> GetAchievements()
     {

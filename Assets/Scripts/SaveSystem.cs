@@ -185,6 +185,7 @@ public struct Preferences
     public struct DailyChallengePreferences
     {
         public int sugarLogCountTarget;
+        public int insulinTakenLogCountTarget;
     }
 }
 
