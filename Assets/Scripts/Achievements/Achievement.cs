@@ -4,13 +4,15 @@ public class Achievement
 {
     public int achievementId;
     public DateTime achieveDateTime;
+    public string achievementName;
     public string achievementDescription;
     
-    public virtual void SetAchievement(string description = "")
+    public virtual void SetAchievement(string description = "", string name = "")
     {
         achievementId = SaveSystem.GetUserData().achievements.Count;
         achieveDateTime = DateTime.Now;
         achievementDescription = description;
+        achievementName = name;
         
         SaveSystem.SaveUserData(this);
     }
