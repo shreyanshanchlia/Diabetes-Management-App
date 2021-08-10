@@ -61,7 +61,7 @@ public class LogsDisplayHandler : MonoBehaviour
             Destroy(logsHolder.GetChild(i).gameObject);
         }
     }
-    
+
     public void LoadLogs()
     {
         logs = SaveSystem.GetUserData().logs;

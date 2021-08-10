@@ -72,8 +72,11 @@ public static class SaveSystem
     public static void SaveUserData(Log log)
     {
         UserData userData = SaveGame.Load("userData", new UserData());
-        
-        if (userData.logs == null) userData.logs = new List<Log>();
+
+        if (userData.logs == null)
+        {
+            userData.logs = new List<Log>();
+        }
         userData.logs.Add(log);
         
         SaveGame.Save("userData", userData);
@@ -106,7 +109,11 @@ public static class SaveSystem
     {
         if (!SaveGame.Exists("userData"))
         {
-            return new UserData();
+            UserData userData = new UserData();
+            userData.logs = new List<Log>();
+            userData.achievements = new List<Achievement>();
+            SaveGame.Save("userData", userData);
+            return userData;
         }
         return SaveGame.Load("userData", new UserData());
     }
@@ -126,8 +133,8 @@ public static class SaveSystem
     {
         UserData userData = SaveGame.Load("userData", new UserData());
         Debug.Log($"LatestUserData - \n{userData.logs[userData.logs.Count-1].logType}");
-        Debug.Log($"Achievement0 = {SaveGame.Load($"Achievement0", new Achievement()).achieveDateTime}");
-        Debug.Log($"Latest Achievement - \n{userData.achievements[userData.achievements.Count-1].achievementId}");
+        //Debug.Log($"Achievement0 = {SaveGame.Load($"Achievement0", new Achievement()).achieveDateTime}");
+        //Debug.Log($"Latest Achievement - \n{userData.achievements[userData.achievements.Count-1].achievementId}");
     }
     
     [MenuItem("SaveSystem/UserData/DeleteUserData")]
@@ -138,8 +145,8 @@ public static class SaveSystem
     [MenuItem("SaveSystem/UserData/DeleteAchievements")]
     public static void DeleteAchievementsData()
     {
-        var userData = SaveGame.Load("userData", new UserData());
-        int achievementsCount = userData.achievements.OrderByDescending(t => t.achievementId).First().achievementId;
+        var userData = SaveGame.Load<UserData>("userData");
+        int achievementsCount = 50;//userData.achievements.OrderByDescending(t => t.achievementId).First().achievementId;
         userData.achievements = new List<Achievement>();
         SaveGame.Save("userData", userData);
         for (int i = 0; i < achievementsCount; i++)
