@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 2326385475356421280}
   - component: {fileID: 2326385475356421283}
   - component: {fileID: 4434327242656592952}
+  - component: {fileID: -4546039694282221611}
   m_Layer: 5
   m_Name: Achievements
   m_TagString: Untagged
@@ -406,6 +407,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ee082e37cf3074885eb81c20d9d6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4546039694282221611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326385475356421293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a037717c8b0d9434a8a1d22b893667c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementsHolder: {fileID: 2326385475213404219}
+  achievementsDisplayPrefab: {fileID: 1902626192879638691, guid: 61f2819df11c07e4e9bba0ce35bf8072, type: 3}
 --- !u!1 &2326385475546619702
 GameObject:
   m_ObjectHideFlags: 0

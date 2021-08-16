@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class LogHolder : MonoBehaviour
 {
-    public TextMeshProUGUI logType;
-    public TextMeshProUGUI startTime;
-    public TextMeshProUGUI otherData;
+    [SerializeField] TextMeshProUGUI logType;
+    [SerializeField] TextMeshProUGUI startTime;
+    [SerializeField] TextMeshProUGUI otherData;
 
     public void SetLog(Log log)
     {

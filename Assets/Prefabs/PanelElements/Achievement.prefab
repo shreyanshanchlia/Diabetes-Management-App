@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 1902626192879638690}
   - component: {fileID: 1902626192879638688}
   - component: {fileID: 1902626192879638689}
+  - component: {fileID: 4507115461734044192}
   m_Layer: 5
   m_Name: Achievement
   m_TagString: Untagged
@@ -231,6 +232,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4507115461734044192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902626192879638691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ef556d9997ed46b14aaa6173afdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementCount: {fileID: 1902626193544793166}
+  achievementName: {fileID: 1902626193483067000}
+  achievementDescription: {fileID: 1902626193961541672}
+  achievementLastDate: {fileID: 1902626194165556657}
+  CountImage: {fileID: 1902626192516189946}
+  AchievementLogo: {fileID: 1902626192810545778}
 --- !u!1 &1902626193483067002
 GameObject:
   m_ObjectHideFlags: 0

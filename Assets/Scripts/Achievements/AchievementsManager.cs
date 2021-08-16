@@ -16,10 +16,11 @@ public static class AchievementsManager
         ).ToList().Count == 1;
         if (!achievedCurrentDayBloodSugarLogCount)
         {
-            if (SaveSystem.GetUserData().logs.Where(t => t.timeOfLog == DateTime.Today && t.logType == Log.LogType.SugarReading).ToList().Count >= SaveSystem.GetUserInfo().preferences.dailyChallengePreferences.sugarLogCountTarget)
+            int sugarLogCountTarget = SaveSystem.GetUserInfo().preferences.dailyChallengePreferences.sugarLogCountTarget;
+            if (SaveSystem.GetUserData().logs.Where(t => t.timeOfLog == DateTime.Today && t.logType == Log.LogType.SugarReading).ToList().Count >= sugarLogCountTarget)
             {
                 AchievementBloodSugarLogCount achievement = new AchievementBloodSugarLogCount();
-                achievement.SetAchievement();
+                achievement.SetAchievement(name: "Daily Goal Completed", description: $"Log Blood Sugar at least {sugarLogCountTarget} times");
                 SaveSystem.SaveUserAchievement(achievement.achievementId, achievement);
             }
         }
