@@ -186,6 +186,8 @@ public struct Preferences
     {
         public int sugarLogCountTarget;
         public int insulinTakenLogCountTarget;
+        public int activityTimeTarget;
+        public int mealCountTarget;
     }
 }
 
