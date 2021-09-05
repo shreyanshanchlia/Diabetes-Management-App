@@ -5,11 +5,16 @@ public class AchievementsDisplayHandler : MonoBehaviour
 {
     [SerializeField] private Transform achievementsHolder;
     [SerializeField] private GameObject achievementsDisplayPrefab;
-
     List<Achievement> achievements; 
     private void Start()
     {
         ShowAchievements();
+    }
+
+    void ShowAchievementsCustomMainPanel()
+    {
+        LoadAchievements();
+        DeleteExisting();
     }
 
     void ShowAchievements()

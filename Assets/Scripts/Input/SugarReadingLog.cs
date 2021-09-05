@@ -12,7 +12,7 @@ public class SugarReadingLog : MonoBehaviour
     
     public void Submit()
     {
-        //try
+        try
         {
             //log base
             log.logType = Log.LogType.SugarReading;
@@ -30,7 +30,7 @@ public class SugarReadingLog : MonoBehaviour
             AndroidPlugin.ShowToast($"Sugar Reading Submitted\n{log.startTime}");
 #endif
         }
-        //catch (Exception e)
+        catch (Exception e)
         {
 #if UNITY_EDITOR
             //throw e;
