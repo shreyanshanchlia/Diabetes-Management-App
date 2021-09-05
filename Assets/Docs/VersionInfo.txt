@@ -50,3 +50,13 @@ Release Versions:
 - Time - 01:45 PM
 - Date - 21 July 2021
 - Updates - Log Date Filters fixed 
+
+0.2.0:
+- Build State - 
+- Build Size - 
+- Dev C.Time - 
+- Time - 
+- Date - 
+- Updates -  
+
+Time backup - 33 hours

@@ -22,7 +22,6 @@ public class MealLog : MonoBehaviour
             log.food = mealTaken.GetString();
 
             SaveSystem.SaveUserData(log);
-            AchievementsManager.AchievementCurrentDayMealLogCheck();
             
 #if UNITY_EDITOR
             Debug.Log("Meal Submitted");

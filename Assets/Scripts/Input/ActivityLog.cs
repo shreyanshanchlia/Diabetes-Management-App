@@ -25,7 +25,6 @@ public class ActivityLog : MonoBehaviour
             if (activityIntensity.GetString() == "3") log.intensityOfActivity = Log.IntensityOfActivity.High;
 
             SaveSystem.SaveUserData(log);
-            AchievementsManager.AchievementCurrentDayActivityCountCheck();
             
 #if UNITY_EDITOR
             Debug.Log("Activity Submitted");

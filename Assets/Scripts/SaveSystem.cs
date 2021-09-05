@@ -85,56 +85,24 @@ public static class SaveSystem
         #endif
     }
 
-    public static void SaveUserData(Achievement achievement)
-    {
-        UserData userData = SaveGame.Load("userData", new UserData());
-
-        if (userData.achievements == null)
-        {
-            userData.achievements = new List<Achievement>();
-        }
-        userData.achievements.Add(achievement);
-        
-        SaveGame.Save("userData", userData);
-    }
-
-    public static void SaveUserAchievement(int achievementId, dynamic achievement)
-    {
-        SaveGame.Save<dynamic>($"Achievement{achievementId}", achievement);
-        
-        Debug.Log(typeof(Achievement).ToString());
-    }
-
     public static UserData GetUserData()
     {
         if (!SaveGame.Exists("userData"))
         {
             UserData userData = new UserData();
             userData.logs = new List<Log>();
-            userData.achievements = new List<Achievement>();
             SaveGame.Save("userData", userData);
             return userData;
         }
         return SaveGame.Load("userData", new UserData());
     }
 
-    public static dynamic GetAchievement(int achievementId)
-    {
-        if (SaveGame.Exists($"Achievement{achievementId}"))
-        {
-            return SaveGame.Load<dynamic>($"Achievement{achievementId}");
-        }
-        return null;
-    }
-    
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     [MenuItem("SaveSystem/UserData/PrintLatest")]
     public static void PrintUserData()
     {
         UserData userData = SaveGame.Load("userData", new UserData());
         Debug.Log($"LatestUserData - \n{userData.logs[userData.logs.Count-1].logType}");
-        //Debug.Log($"Achievement0 = {SaveGame.Load($"Achievement0", new Achievement()).achieveDateTime}");
-        //Debug.Log($"Latest Achievement - \n{userData.achievements[userData.achievements.Count-1].achievementId}");
     }
     
     [MenuItem("SaveSystem/UserData/DeleteUserData")]
@@ -142,22 +110,9 @@ public static class SaveSystem
     {
         SaveGame.Delete("userData");
     }
-    [MenuItem("SaveSystem/UserData/DeleteAchievements")]
-    public static void DeleteAchievementsData()
-    {
-        var userData = SaveGame.Load<UserData>("userData");
-        int achievementsCount = 50;//userData.achievements.OrderByDescending(t => t.achievementId).First().achievementId;
-        userData.achievements = new List<Achievement>();
-        SaveGame.Save("userData", userData);
-        for (int i = 0; i < achievementsCount; i++)
-        {
-            SaveGame.Delete($"Achievement{i}");
-        }
-    }
-    #endif
-    
-    #endregion
 }
+#endif
+#endregion
 
 
 public struct Credentials
@@ -194,5 +149,4 @@ public struct Preferences
 public struct UserData
 {
     public List<Log> logs;
-    public List<Achievement> achievements;
 }
