@@ -4162,7 +4162,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 05 September 2021
+  m_text: 13 September 2021
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 65697342639b8e146a9a1b1b67c15efd, type: 2}
   m_sharedMaterial: {fileID: -6232915241792269029, guid: 65697342639b8e146a9a1b1b67c15efd, type: 2}
