@@ -9,6 +9,7 @@ public class MealLog : MonoBehaviour
     private Log log;
 
     [SerializeField] private StringHolder mealTaken, startTime;
+    [SerializeField] private StringHolder nCarbs, nFat, nProtein, nFiber;
     
     public void Submit()
     {
@@ -18,9 +19,16 @@ public class MealLog : MonoBehaviour
             log.logType = Log.LogType.Meal;
             log.timeOfLog = DateTime.Now;
             log.startTime = DateTime.ParseExact(startTime.GetString(), "H:mm", CultureInfo.InvariantCulture);
+            
             //custom log
             log.food = mealTaken.GetString();
-
+            
+            log.nutritionalValue = new Log.NutritionalValue();
+            log.nutritionalValue.Carbs = nCarbs.GetString();
+            log.nutritionalValue.Fat = nFat.GetString();
+            log.nutritionalValue.Protein = nProtein.GetString();
+            log.nutritionalValue.Fiber = nFiber.GetString();
+            
             SaveSystem.SaveUserData(log);
             
 #if UNITY_EDITOR

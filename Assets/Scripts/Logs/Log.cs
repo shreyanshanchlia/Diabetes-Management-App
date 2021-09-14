@@ -26,6 +26,14 @@ public struct Log
         High
     }
 
+    public struct NutritionalValue
+    {
+        public string Carbs;
+        public string Fat;
+        public string Protein;
+        public string Fiber;
+    }
+
     public int logId; 
     public LogType logType;
 
@@ -49,6 +57,7 @@ public struct Log
 
     //meal
     public string food;
+    public NutritionalValue nutritionalValue;
 
     //hydration
     public int glassesOfWater;

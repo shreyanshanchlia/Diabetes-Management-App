@@ -497,7 +497,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8085114785379538981}
+        m_TargetAssemblyTypeName: StringHolder, Assembly-CSharp
+        m_MethodName: SetString
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -526,8 +538,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4654126783573235075}
   - component: {fileID: 8908247481890921805}
+  - component: {fileID: 1223591124311765832}
   m_Layer: 5
-  m_Name: Value (2)
+  m_Name: protein Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,7 +580,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fetchDestination: {fileID: 7665367612116887517}
-  column: C
+  column: Protein
+--- !u!114 &1223591124311765832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989535387563645769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a63886774bd76746a8b7918f0f136f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultString: 0
+  setText: 0
+  ShowStringText: {fileID: 0}
+  customText: 
 --- !u!1 &2354836528699080326
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Property A
+  m_text: "Carbohydrates\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19c8530c49d58184da2d127b7c7bb50f, type: 2}
   m_sharedMaterial: {fileID: -5658066984926590056, guid: 19c8530c49d58184da2d127b7c7bb50f, type: 2}
@@ -924,7 +953,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741857123889316759}
+        m_TargetAssemblyTypeName: StringHolder, Assembly-CSharp
+        m_MethodName: SetString
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1099,7 +1140,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1223591124311765832}
+        m_TargetAssemblyTypeName: StringHolder, Assembly-CSharp
+        m_MethodName: SetString
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1408,7 +1461,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4484492562180441359}
+        m_TargetAssemblyTypeName: StringHolder, Assembly-CSharp
+        m_MethodName: SetString
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1930,7 +1995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Property D
+  m_text: "Fiber\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19c8530c49d58184da2d127b7c7bb50f, type: 2}
   m_sharedMaterial: {fileID: -5658066984926590056, guid: 19c8530c49d58184da2d127b7c7bb50f, type: 2}
@@ -2064,7 +2129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Property B
+  m_text: "Fat\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19c8530c49d58184da2d127b7c7bb50f, type: 2}
   m_sharedMaterial: {fileID: -5658066984926590056, guid: 19c8530c49d58184da2d127b7c7bb50f, type: 2}
@@ -2277,8 +2342,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4245689267732236145}
   - component: {fileID: 1246504272871060273}
+  - component: {fileID: 8085114785379538981}
   m_Layer: 5
-  m_Name: Value (3)
+  m_Name: fiber Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2318,7 +2384,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fetchDestination: {fileID: 4241653589009569106}
-  column: D
+  column: Fiber
+--- !u!114 &8085114785379538981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6288843759259910786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a63886774bd76746a8b7918f0f136f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultString: 0
+  setText: 0
+  ShowStringText: {fileID: 0}
+  customText: 
 --- !u!1 &6308908110067932108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2628,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mealTaken: {fileID: 3870624847252343981}
   startTime: {fileID: 4816650369612336004}
+  nCarbs: {fileID: 4484492562180441359}
+  nFat: {fileID: 1741857123889316759}
+  nProtein: {fileID: 1223591124311765832}
+  nFiber: {fileID: 8085114785379538981}
 --- !u!114 &4950805491533612162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2854,8 +2940,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3032698904126342693}
   - component: {fileID: 1719892334350206257}
+  - component: {fileID: 4484492562180441359}
   m_Layer: 5
-  m_Name: Value
+  m_Name: carbs Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2895,7 +2982,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fetchDestination: {fileID: 8177391608067620980}
-  column: A
+  column: Carbohydrates
+--- !u!114 &4484492562180441359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734085299445107279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a63886774bd76746a8b7918f0f136f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultString: 0
+  setText: 0
+  ShowStringText: {fileID: 0}
+  customText: 
 --- !u!1 &7818813480680677851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,8 +3419,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7546166051953447548}
   - component: {fileID: 8609080772168318189}
+  - component: {fileID: 1741857123889316759}
   m_Layer: 5
-  m_Name: Value (1)
+  m_Name: fat Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3357,7 +3461,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fetchDestination: {fileID: 3054778210716186549}
-  column: B
+  column: Fat
+--- !u!114 &1741857123889316759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754443885575807729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a63886774bd76746a8b7918f0f136f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultString: 0
+  setText: 0
+  ShowStringText: {fileID: 0}
+  customText: 
 --- !u!1 &8900105258638545879
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,7 +3750,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Property C
+  m_text: "Protein\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19c8530c49d58184da2d127b7c7bb50f, type: 2}
   m_sharedMaterial: {fileID: -5658066984926590056, guid: 19c8530c49d58184da2d127b7c7bb50f, type: 2}
