@@ -7,6 +7,7 @@ using UnityEngine;
 
 public static class SaveSystem
 {
+
     #region User Info
     public static void SaveUserInfo(UserInfo userInfo)
     {
@@ -131,19 +132,17 @@ public struct UserInfo
     public float weight;    //in kgs
     public float height;    //in inches
     
-    public Preferences preferences;
+    public AchievementGoals achievementGoals;
+    public List<string> unlockedItems;
+    public string equippedCharacter;
 }
 
-public struct Preferences
+public struct AchievementGoals
 {
-    public DailyChallengePreferences dailyChallengePreferences;
-    public struct DailyChallengePreferences
-    {
-        public int sugarLogCountTarget;
-        public int insulinTakenLogCountTarget;
-        public int activityTimeTarget;
-        public int mealCountTarget;
-    }
+    public int sugarLogCountTarget;
+    public int insulinTakenLogCountTarget;
+    public int activityTimeTarget;
+    public int mealCountTarget;
 }
 
 public struct UserData
