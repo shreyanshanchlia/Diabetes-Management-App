@@ -133,8 +133,11 @@ public struct UserInfo
     public float height;    //in inches
     
     public AchievementGoals achievementGoals;
+    
     public List<string> unlockedItems;
     public string equippedCharacter;
+
+    public int sparklesCoins;
 }
 
 public struct AchievementGoals
