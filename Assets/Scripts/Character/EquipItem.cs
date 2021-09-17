@@ -1,3 +1,4 @@
+using FantomLib;
 using UnityEngine;
 
 public class EquipItem : MonoBehaviour
@@ -30,7 +31,7 @@ public class EquipItem : MonoBehaviour
         else
         {
             #if !UNITY_EDITOR
-            
+            AndroidPlugin.ShowToast($"Not enough sparkles.");
             #endif
         }
     }
