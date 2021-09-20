@@ -1047,6 +1047,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 760547807415827215, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e6fab113fa3d9a346ac9f580605e0473, type: 3}
     - target: {fileID: 2162166031067436661, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
       propertyPath: m_Name
       value: Blood Sugar
@@ -1354,6 +1358,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Activity
       objectReference: {fileID: 0}
+    - target: {fileID: 760547807415827215, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5786c0afdb9a74e48afc0c54fa840e6b, type: 3}
     - target: {fileID: 2162166031067436661, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
       propertyPath: m_Name
       value: Activity
@@ -2482,6 +2490,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Insulin Taken
       objectReference: {fileID: 0}
+    - target: {fileID: 760547807415827215, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab4f156b2758f16409d0c78218ee2d49, type: 3}
     - target: {fileID: 2162166031067436661, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
       propertyPath: m_Name
       value: Insulin Taken
@@ -2878,6 +2890,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Sleep Cycle
       objectReference: {fileID: 0}
+    - target: {fileID: 760547807415827215, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc66da8f86e00ee49b17df5720fa748b, type: 3}
     - target: {fileID: 2162166031067436661, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
       propertyPath: m_Name
       value: Sleep Cycle
@@ -4204,7 +4220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 15 September 2021
+  m_text: 20 September 2021
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 65697342639b8e146a9a1b1b67c15efd, type: 2}
   m_sharedMaterial: {fileID: -6232915241792269029, guid: 65697342639b8e146a9a1b1b67c15efd, type: 2}
@@ -4367,6 +4383,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Meal Taken
       objectReference: {fileID: 0}
+    - target: {fileID: 760547807415827215, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bc46d14492986f942b6a080f186cf09e, type: 3}
     - target: {fileID: 2162166031067436661, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
       propertyPath: m_Name
       value: Meal Taken
@@ -4685,6 +4705,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Hydration
       objectReference: {fileID: 0}
+    - target: {fileID: 760547807415827215, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c9c6bb355eb49f4eb54f8df235a9df6, type: 3}
     - target: {fileID: 2162166031067436661, guid: ea737e9d7044be64a83b3bb7ee54113d, type: 3}
       propertyPath: m_Name
       value: Hydration
