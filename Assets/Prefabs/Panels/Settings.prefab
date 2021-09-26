@@ -760,13 +760,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 8291860429366592677}
+        m_TargetAssemblyTypeName: CharacterListManager, Assembly-CSharp
+        m_MethodName: EquipCharacter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -993,6 +993,8 @@ GameObject:
   - component: {fileID: 3509845653682865189}
   - component: {fileID: 3509845653682865186}
   - component: {fileID: 3509845653682865187}
+  - component: {fileID: 8291860429366592677}
+  - component: {fileID: 677717693770062908}
   m_Layer: 5
   m_Name: Equipped Character
   m_TagString: Untagged
@@ -1086,6 +1088,40 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &8291860429366592677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3509845653682865185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4dccba392a131f4a8880a89064c98b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPanelHolder: {fileID: 3509845654090288286}
+  characterPanelElement: {fileID: 903581747700434559, guid: 19def45e5c43d824884caac20e454394, type: 3}
+  availableCharacters:
+  - {fileID: 11400000, guid: 3b6aba912e2ab5d489eef66dda16df72, type: 2}
+  - {fileID: 11400000, guid: 69d532c8d53ca38448de4b3d7324af7d, type: 2}
+  equipCharacter: {fileID: 677717693770062908}
+  selectedCharacter: 
+--- !u!114 &677717693770062908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3509845653682865185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea073ba9db9d73c4fbb1444239315a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equippedCharacterImage: {fileID: 3509845653634480996}
+  characterNameText: {fileID: 3509845653872348118}
+  characterDescriptionText: {fileID: 3509845654228992691}
 --- !u!1 &3509845653766378839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,14 +1208,13 @@ GameObject:
   - component: {fileID: 3509845653769616367}
   - component: {fileID: 3509845653769616368}
   - component: {fileID: 3509845653769616369}
-  - component: {fileID: 6681082077237172828}
   m_Layer: 5
   m_Name: Equip Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3509845653769616367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1240,23 +1275,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6681082077237172828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3509845653769616364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4dccba392a131f4a8880a89064c98b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterPanelHolder: {fileID: 3509845654090288286}
-  characterPanelElement: {fileID: 903581747700434559, guid: 19def45e5c43d824884caac20e454394, type: 3}
-  availableCharacters:
-  - {fileID: 11400000, guid: 3b6aba912e2ab5d489eef66dda16df72, type: 2}
-  selectedCharacter: 
 --- !u!1 &3509845653872348116
 GameObject:
   m_ObjectHideFlags: 0
