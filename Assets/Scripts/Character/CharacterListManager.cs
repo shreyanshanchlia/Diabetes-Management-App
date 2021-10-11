@@ -14,14 +14,17 @@ public class CharacterListManager : MonoBehaviour
 
     private void Start()
     {
-        if (SaveSystem.GetUserInfo().unlockedItems == null)
+        //if (SaveSystem.GetUserInfo().unlockedItems == null)
+        if (BaseSave.Load(BaseSave.UNLOCKED, new List<string>()) == null)
         {
-            UserInfo userInfo = SaveSystem.GetUserInfo();
-            userInfo.unlockedItems = new List<string>();
-            userInfo.equippedCharacter = "default";
-            SaveSystem.SaveUserInfo(userInfo);
+            // UserInfo userInfo = SaveSystem.GetUserInfo();
+            // userInfo.unlockedItems = new List<string>();
+            // userInfo.equippedCharacter = "default";
+            // SaveSystem.SaveUserInfo(userInfo);
+            
+            BaseSave.PrefSave(BaseSave.PREFS_EQUIPPEDCHARACTER, "default");
         }
-        equipCharacter.loadEquippedCharacter(CharacterIdToCharacter(SaveSystem.GetUserInfo().equippedCharacter));
+        equipCharacter.loadEquippedCharacter(CharacterIdToCharacter(BaseSave.PrefLoad(BaseSave.PREFS_EQUIPPEDCHARACTER, "default")));
     }
 
     private void OnEnable()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 // ReSharper disable once RedundantUsingDirective
@@ -19,7 +20,8 @@ public class EquipCharacter : MonoBehaviour
         characterDescriptionText.text = character.characterDescription;
     }
     
-    public void Equip(Character character)
+    [Obsolete("", true)]
+    public void EquipAndSave(Character character)
     {
         UserInfo userInfo = SaveSystem.GetUserInfo();
         if (userInfo.unlockedItems == null)
@@ -38,13 +40,34 @@ public class EquipCharacter : MonoBehaviour
         }
     }
 
+    public void Equip(Character character)
+    {
+        List<string> unlocked = BaseSave.Load(BaseSave.UNLOCKED, new List<string>());
+        if (unlocked == null)
+        {
+            unlocked = new List<string>();
+        }
+        if (unlocked.Contains(character.characterId))
+        {
+            BaseSave.PrefSave(BaseSave.PREFS_EQUIPPEDCHARACTER, character.characterId);
+            loadEquippedCharacter(character);
+        }
+        else
+        {
+            //TODO: Have unlock UI Popup before buying the item.
+            BuyItem(character);
+        }
+    }
+
     public void BuyItem(Character character)
     {
-        UserInfo userInfo = SaveSystem.GetUserInfo();
-        if (userInfo.sparklesCoins >= character.unlockCost)
+        //UserInfo userInfo = SaveSystem.GetUserInfo();
+        int sparkleCoins = BaseSave.Load(BaseSave.SPARKLES, 0);
+        if (sparkleCoins >= character.unlockCost)
         {
-            userInfo.sparklesCoins -= character.unlockCost;
-            SaveSystem.SaveUserInfo(userInfo);
+            sparkleCoins -= character.unlockCost;
+            //SaveSystem.SaveUserInfo(userInfo);
+            BaseSave.Save(BaseSave.SPARKLES, sparkleCoins);
         }
         else
         {

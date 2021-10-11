@@ -21,7 +21,8 @@ public class HydrationLog : MonoBehaviour
             //custom log
             log.glassesOfWater = Convert.ToInt32(waterDrank.GetString());
             
-            SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
+            //SaveSystem.SaveUserData(log);
 #if UNITY_EDITOR
             Debug.Log("Hydration Submitted");
 #else

@@ -29,7 +29,8 @@ public class MealLog : MonoBehaviour
             log.nutritionalValue.Protein = nProtein.GetString();
             log.nutritionalValue.Fiber = nFiber.GetString();
             
-            SaveSystem.SaveUserData(log);
+            //SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
             
 #if UNITY_EDITOR
             Debug.Log("Meal Submitted");

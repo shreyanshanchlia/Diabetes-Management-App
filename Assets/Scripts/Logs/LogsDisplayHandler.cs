@@ -64,7 +64,8 @@ public class LogsDisplayHandler : MonoBehaviour
 
     public void LoadLogs()
     {
-        logs = SaveSystem.GetUserData().logs;
+        //logs = SaveSystem.GetUserData().logs;
+        logs = BaseSave.Load(BaseSave.LOGS, new List<Log>());
         logs = logs.OrderBy(t => t.startTime).ToList();
     }
 

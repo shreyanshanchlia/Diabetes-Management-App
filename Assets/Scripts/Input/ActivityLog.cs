@@ -24,7 +24,8 @@ public class ActivityLog : MonoBehaviour
             if (activityIntensity.GetString() == "2") log.intensityOfActivity = Log.IntensityOfActivity.Medium;
             if (activityIntensity.GetString() == "3") log.intensityOfActivity = Log.IntensityOfActivity.High;
 
-            SaveSystem.SaveUserData(log);
+            //SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
             
 #if UNITY_EDITOR
             Debug.Log("Activity Submitted");

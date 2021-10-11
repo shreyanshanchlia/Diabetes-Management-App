@@ -21,7 +21,8 @@ public class SugarReadingLog : MonoBehaviour
             //custom log
             log.sugarReading = Convert.ToInt32(sugarReading.GetString());
             
-            SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
+            //SaveSystem.SaveUserData(log);
 
 #if UNITY_EDITOR
             Debug.Log("Sugar Reading Submitted");

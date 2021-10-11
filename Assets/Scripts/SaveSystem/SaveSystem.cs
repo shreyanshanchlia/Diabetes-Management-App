@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using BayatGames.SaveGameFree;
@@ -5,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 
 
+[Obsolete("Use BaseSave Instead", true)]
 public static class SaveSystem
 {
 

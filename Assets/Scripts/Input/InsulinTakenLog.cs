@@ -23,7 +23,8 @@ public class InsulinTakenLog : MonoBehaviour
             if (insulinType.GetString() == "1") log.typeOfInsulinTaken = Log.TypeOfInsulin.Bolus;
             if (insulinType.GetString() == "2") log.typeOfInsulinTaken = Log.TypeOfInsulin.Basil;
             
-            SaveSystem.SaveUserData(log);
+            //SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
             
 #if UNITY_EDITOR
             Debug.Log("Insulin Taken Submitted");
