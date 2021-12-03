@@ -197,6 +197,7 @@ MonoBehaviour:
   startTime: {fileID: 1157130184268444153}
   endTime: {fileID: 1157130183915052258}
   activityIntensity: {fileID: 583025549052085776}
+  dailyLogAchievement: {fileID: 11400000, guid: e4dfb541bd8b5884fade53dda4af27c6, type: 2}
 --- !u!114 &938416793107951801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bb952f5d0be351e47b0b99b4fe7edd5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5786c0afdb9a74e48afc0c54fa840e6b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

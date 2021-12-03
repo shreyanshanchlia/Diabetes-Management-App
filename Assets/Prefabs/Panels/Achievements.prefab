@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 2326385475356421280}
   - component: {fileID: 2326385475356421283}
   - component: {fileID: 4434327242656592952}
-  - component: {fileID: -4546039694282221611}
+  - component: {fileID: 7660519458284426134}
   m_Layer: 5
   m_Name: Achievements
   m_TagString: Untagged
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ee082e37cf3074885eb81c20d9d6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-4546039694282221611
+--- !u!114 &7660519458284426134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,11 +416,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2326385475356421293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a037717c8b0d9434a8a1d22b893667c5, type: 3}
+  m_Script: {fileID: 11500000, guid: b86fafc9b7b17154897df6ef0a07bec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  achievementsHolder: {fileID: 2326385475213404219}
-  achievementsDisplayPrefab: {fileID: 1902626192879638691, guid: 61f2819df11c07e4e9bba0ce35bf8072, type: 3}
+  achievementsPanelElement: {fileID: 8173756777148632756}
+  allAchievementsType:
+  - {fileID: 11400000, guid: 27c61995210aecb46b02d63f088d0c1e, type: 2}
+  - {fileID: 11400000, guid: d8a2a2abdff2d0947b8a10cd37cda046, type: 2}
+  - {fileID: 11400000, guid: e4dfb541bd8b5884fade53dda4af27c6, type: 2}
+  - {fileID: 11400000, guid: 997b39c4ce93bbb49a77b85c88f61feb, type: 2}
+  - {fileID: 11400000, guid: 65b44b668179e72419bdc29438b92dc8, type: 2}
+  - {fileID: 11400000, guid: 25dee1af9189eb64f82e21b7aed8de29, type: 2}
 --- !u!1 &2326385475546619702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,8 +2373,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Achievement
       objectReference: {fileID: 0}
+    - target: {fileID: 1902626194165556659, guid: 61f2819df11c07e4e9bba0ce35bf8072, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61f2819df11c07e4e9bba0ce35bf8072, type: 3}
+--- !u!1 &8173756777148632756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1902626192879638691, guid: 61f2819df11c07e4e9bba0ce35bf8072, type: 3}
+  m_PrefabInstance: {fileID: 7712546347837232663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8173756777148632757 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1902626192879638690, guid: 61f2819df11c07e4e9bba0ce35bf8072, type: 3}

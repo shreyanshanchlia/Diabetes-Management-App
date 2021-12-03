@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 // ReSharper disable once RedundantUsingDirective
 using FantomLib;
 using UnityEngine;
@@ -9,7 +11,7 @@ public class SugarReadingLog : MonoBehaviour
     private Log log;
 
     [SerializeField] private StringHolder sugarReading, startTime;
-    
+    [SerializeField] private Achievement dailyLogAchievement;
     public void Submit()
     {
         try
@@ -23,6 +25,8 @@ public class SugarReadingLog : MonoBehaviour
             
             BaseSave.SaveInList(BaseSave.LOGS, log);
             //SaveSystem.SaveUserData(log);
+            
+            AchievementsManager.CheckAddAchievement(dailyLogAchievement);
 
 #if UNITY_EDITOR
             Debug.Log("Sugar Reading Submitted");
@@ -33,7 +37,7 @@ public class SugarReadingLog : MonoBehaviour
         catch (Exception e)
         {
 #if UNITY_EDITOR
-            //throw e;
+            Debug.Log(e.Message + e.StackTrace);
 #else
             AndroidPlugin.ShowToast(e.Message);
 #endif

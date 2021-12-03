@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 613aaeb685acb1242bb9df7d34d98583, type: 3}
-  m_Name: BloodSugarDailyAchievement
+  m_Name: InsulinTakenDailyAchievement
   m_EditorClassIdentifier: 
-  achievementID: d_sugar
-  achievementLogo: {fileID: 21300000, guid: dd762947f5b07b841a9d02b2fd9c5d53, type: 3}
-  achievementName: Blood Sugar
-  achievementDescription: Logged blood sugar level atleast once
+  achievementID: d_insulin
+  achievementLogo: {fileID: 21300000, guid: ab4f156b2758f16409d0c78218ee2d49, type: 3}
+  achievementName: Insulin Taken
+  achievementDescription: Logged Insulin atleast once

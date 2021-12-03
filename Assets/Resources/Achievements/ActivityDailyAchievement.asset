@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 613aaeb685acb1242bb9df7d34d98583, type: 3}
-  m_Name: BloodSugarDailyAchievement
+  m_Name: ActivityDailyAchievement
   m_EditorClassIdentifier: 
-  achievementID: d_sugar
-  achievementLogo: {fileID: 21300000, guid: dd762947f5b07b841a9d02b2fd9c5d53, type: 3}
-  achievementName: Blood Sugar
-  achievementDescription: Logged blood sugar level atleast once
+  achievementID: d_activity
+  achievementLogo: {fileID: 21300000, guid: 5786c0afdb9a74e48afc0c54fa840e6b, type: 3}
+  achievementName: Activity Logged
+  achievementDescription: Logged exercise done atleast once

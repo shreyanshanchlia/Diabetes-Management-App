@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 613aaeb685acb1242bb9df7d34d98583, type: 3}
-  m_Name: BloodSugarDailyAchievement
+  m_Name: HydrationDailyAchievement
   m_EditorClassIdentifier: 
-  achievementID: d_sugar
-  achievementLogo: {fileID: 21300000, guid: dd762947f5b07b841a9d02b2fd9c5d53, type: 3}
-  achievementName: Blood Sugar
-  achievementDescription: Logged blood sugar level atleast once
+  achievementID: d_hydration
+  achievementLogo: {fileID: 21300000, guid: 4c9c6bb355eb49f4eb54f8df235a9df6, type: 3}
+  achievementName: Hydration Logged
+  achievementDescription: Logged hydration level
