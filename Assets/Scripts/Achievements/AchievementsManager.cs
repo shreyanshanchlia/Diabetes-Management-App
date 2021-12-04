@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FantomLib;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AchievementsManager : MonoBehaviour
 {
@@ -20,6 +22,19 @@ public class AchievementsManager : MonoBehaviour
         {
             dailyLogAchievement.timeOfAchievement = DateTime.Today;
             BaseSave.SaveInList(BaseSave.ACHIEVEMENTS, dailyLogAchievement);
+            
+#if !UNITY_EDITOR && UNITY_ANDROID
+            AndroidPlugin.ShowToast($"Achievement Unlocked!\n{dailyLogAchievement.achievementName}");
+#endif
+        }
+        else
+        {
+            int foundSparkles = Random.Range(0, 5);
+            BaseSave.Save(BaseSave.SPARKLES, BaseSave.Load(BaseSave.SPARKLES, 0) + foundSparkles);
+            
+#if !UNITY_EDITOR && UNITY_ANDROID
+            AndroidPlugin.ShowToast($"Found {foundSparkles} Sparkles!");
+#endif
         }
     }
 

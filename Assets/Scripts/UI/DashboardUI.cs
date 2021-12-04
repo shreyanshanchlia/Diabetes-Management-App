@@ -35,7 +35,9 @@ public class DashboardUI : MonoBehaviour
         DailyStreak _currentStreak = BaseSave.Load(BaseSave.DAILY_STREAK, new DailyStreak());
         if (safe) dailyStreakText.text = $"{_currentStreak.streakLength}";
         else dailyStreakText.text = $"<color=red>{_currentStreak.streakLength}";
+        
         //update sparklesText
+        sparklesText.text = BaseSave.Load(BaseSave.SPARKLES, 0).ToString();
 
         //update xpText
     }
