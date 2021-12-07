@@ -80,6 +80,8 @@ public class CSVReader : MonoBehaviour
             Debug.LogError($"Column {column} Not found");
             return "";
         }
+
+        if (foundRowIndex <= 0) return "";
         return csvData[foundRowIndex - 1][columnIndex];
     }
 }
