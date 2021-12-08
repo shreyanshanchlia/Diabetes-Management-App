@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BloodSugarDailyAchievement
   m_EditorClassIdentifier: 
   achievementID: d_sugar
-  achievementLogo: {fileID: 21300000, guid: bb952f5d0be351e47b0b99b4fe7edd5b, type: 3}
+  achievementLogo: {fileID: 21300000, guid: dd762947f5b07b841a9d02b2fd9c5d53, type: 3}
   achievementName: Blood Sugar
-  achievementDescription: Completed blood sugar logging goals
+  achievementDescription: Logged blood sugar level atleast once

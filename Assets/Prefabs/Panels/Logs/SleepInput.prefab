@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: {fileID: 568408832016725564}
   endTime: {fileID: 568408832092138903}
+  dailyLogAchievement: {fileID: 11400000, guid: 65b44b668179e72419bdc29438b92dc8, type: 2}
 --- !u!114 &3291762694308976034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bb952f5d0be351e47b0b99b4fe7edd5b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc66da8f86e00ee49b17df5720fa748b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

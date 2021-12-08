@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 249360592}
   - component: {fileID: 249360594}
   - component: {fileID: 249360593}
+  - component: {fileID: 249360595}
   m_Layer: 5
   m_Name: Dashboard
   m_TagString: Untagged
@@ -881,6 +882,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249360591}
   m_CullTransparentMesh: 1
+--- !u!114 &249360595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249360591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d0463dc2bd25a45ad238f670a46501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfAchievementsText: {fileID: 2008863785}
+  dailyStreakText: {fileID: 41299286}
+  sparklesText: {fileID: 2051751665}
+  xpText: {fileID: 465624369}
 --- !u!1 &316151744
 GameObject:
   m_ObjectHideFlags: 0
@@ -4220,7 +4237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 26 September 2021
+  m_text: 03 December 2021
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 65697342639b8e146a9a1b1b67c15efd, type: 2}
   m_sharedMaterial: {fileID: -6232915241792269029, guid: 65697342639b8e146a9a1b1b67c15efd, type: 2}
@@ -4247,7 +4264,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.7
+  m_fontSize: 63.1
   m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 1

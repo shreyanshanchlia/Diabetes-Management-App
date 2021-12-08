@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 // ReSharper disable once RedundantUsingDirective
 using FantomLib;
 using UnityEngine;
@@ -9,6 +11,7 @@ public class HydrationLog : MonoBehaviour
     private Log log;
 
     [SerializeField] private StringHolder waterDrank;
+    [SerializeField] private Achievement dailyLogAchievement;
     
     public void Submit()
     {
@@ -21,7 +24,11 @@ public class HydrationLog : MonoBehaviour
             //custom log
             log.glassesOfWater = Convert.ToInt32(waterDrank.GetString());
             
-            SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
+            //SaveSystem.SaveUserData(log);
+            
+            AchievementsManager.CheckAddAchievement(dailyLogAchievement);
+            
 #if UNITY_EDITOR
             Debug.Log("Hydration Submitted");
 #else

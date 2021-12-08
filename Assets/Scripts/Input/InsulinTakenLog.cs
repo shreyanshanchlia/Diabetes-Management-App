@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 // ReSharper disable once RedundantUsingDirective
 using FantomLib;
 using System.Globalization;
+using System.Linq;
 using UnityEngine;
 
 public class InsulinTakenLog : MonoBehaviour
@@ -9,6 +11,7 @@ public class InsulinTakenLog : MonoBehaviour
     private Log log;
 
     [SerializeField] private StringHolder startTime, insulinQuantity, insulinType;
+    [SerializeField] private Achievement dailyLogAchievement;
     
     public void Submit()
     {
@@ -23,7 +26,10 @@ public class InsulinTakenLog : MonoBehaviour
             if (insulinType.GetString() == "1") log.typeOfInsulinTaken = Log.TypeOfInsulin.Bolus;
             if (insulinType.GetString() == "2") log.typeOfInsulinTaken = Log.TypeOfInsulin.Basil;
             
-            SaveSystem.SaveUserData(log);
+            //SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
+            
+            AchievementsManager.CheckAddAchievement(dailyLogAchievement);
             
 #if UNITY_EDITOR
             Debug.Log("Insulin Taken Submitted");

@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 // ReSharper disable once RedundantUsingDirective
 using FantomLib;
 using System.Globalization;
+using System.Linq;
 using UnityEngine;
 
 public class ActivityLog : MonoBehaviour
@@ -9,6 +11,7 @@ public class ActivityLog : MonoBehaviour
     private Log log;
 
     [SerializeField] private StringHolder startTime, endTime, activityIntensity;
+    [SerializeField] private Achievement dailyLogAchievement;
     
     public void Submit()
     {
@@ -24,7 +27,10 @@ public class ActivityLog : MonoBehaviour
             if (activityIntensity.GetString() == "2") log.intensityOfActivity = Log.IntensityOfActivity.Medium;
             if (activityIntensity.GetString() == "3") log.intensityOfActivity = Log.IntensityOfActivity.High;
 
-            SaveSystem.SaveUserData(log);
+            //SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
+            
+            AchievementsManager.CheckAddAchievement(dailyLogAchievement);
             
 #if UNITY_EDITOR
             Debug.Log("Activity Submitted");

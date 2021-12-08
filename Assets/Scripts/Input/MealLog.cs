@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 // ReSharper disable once RedundantUsingDirective
 using FantomLib;
 using UnityEngine;
@@ -10,6 +12,7 @@ public class MealLog : MonoBehaviour
 
     [SerializeField] private StringHolder mealTaken, startTime;
     [SerializeField] private StringHolder nCarbs, nFat, nProtein, nFiber;
+    [SerializeField] private Achievement dailyLogAchievement;
     
     public void Submit()
     {
@@ -29,7 +32,10 @@ public class MealLog : MonoBehaviour
             log.nutritionalValue.Protein = nProtein.GetString();
             log.nutritionalValue.Fiber = nFiber.GetString();
             
-            SaveSystem.SaveUserData(log);
+            //SaveSystem.SaveUserData(log);
+            BaseSave.SaveInList(BaseSave.LOGS, log);
+            
+            AchievementsManager.CheckAddAchievement(dailyLogAchievement);
             
 #if UNITY_EDITOR
             Debug.Log("Meal Submitted");

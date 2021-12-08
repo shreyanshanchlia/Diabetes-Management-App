@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -14,8 +15,18 @@ public class ValueFetch : MonoBehaviour
         csvReader = FindObjectOfType<CSVReader>();
     }
 
-    public void LoadEntry(string entry)
+    public void LoadEntry()
     {
-        fetchDestination.text = csvReader.FetchValue(entry, column);
+        StartCoroutine(WaitAndLoadEntry());
+    }
+
+    IEnumerator WaitAndLoadEntry()
+    {
+        float _timeOut = Time.time + 10f;
+        while (csvReader.loadingLock)// && Time.time < _timeOut)
+        {
+            yield return null;
+        }
+        fetchDestination.text = csvReader.FetchValue(column);
     }
 }
