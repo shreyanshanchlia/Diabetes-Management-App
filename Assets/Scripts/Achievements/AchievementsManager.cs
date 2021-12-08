@@ -10,6 +10,8 @@ public class AchievementsManager : MonoBehaviour
     public static void CheckAddAchievement(Achievement dailyLogAchievement)
     {
         DailyStreakIncremented();
+        BaseSave.Save(BaseSave.XP, BaseSave.Load(BaseSave.XP, 0) + 20);
+        
         List<Achievement> achievements = BaseSave.Load(BaseSave.ACHIEVEMENTS, new List<Achievement>());
         if (achievements.Count == 0)
         {

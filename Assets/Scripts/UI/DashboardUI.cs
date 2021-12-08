@@ -11,6 +11,8 @@ public class DashboardUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dailyStreakText;
     [SerializeField] private TextMeshProUGUI sparklesText;
     [SerializeField] private TextMeshProUGUI xpText;
+    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI nextLevelText;
 
     private void Start()
     {
@@ -40,5 +42,8 @@ public class DashboardUI : MonoBehaviour
         sparklesText.text = BaseSave.Load(BaseSave.SPARKLES, 0).ToString();
 
         //update xpText
+        xpText.text = $"{BaseSave.Load(BaseSave.XP, 0) % 100} XP";
+        levelText.text = $"{BaseSave.Load(BaseSave.XP, 0) / 100}";
+        nextLevelText.text = $"Next level after <b>{(100 - (BaseSave.Load(BaseSave.XP, 0) % 100))} XP";
     }
 }

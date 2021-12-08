@@ -3139,7 +3139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fetchDestination: {fileID: 8177391608067620980}
-  column: Net-Carbs (g)
+  column: Carbohydrate (g)
 --- !u!114 &4484492562180441359
 MonoBehaviour:
   m_ObjectHideFlags: 0

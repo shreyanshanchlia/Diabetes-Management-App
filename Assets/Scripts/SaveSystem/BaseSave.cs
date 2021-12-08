@@ -13,13 +13,13 @@ public static class BaseSave
     {
         return PlayerPrefs.GetString(identifier, "default");
     }
-    
+    #if UNITY_EDITOR
     [MenuItem("BaseSave/All/Clear")]
     public static void DeleteUserData()
     {
         SaveGame.Clear();
     }
-    
+    #endif
     public static void Save<T>(string identifier, T value)
     {
         if (!SaveGame.Exists(identifier))
@@ -59,6 +59,7 @@ public static class BaseSave
     public static string ACHIEVEMENTS = "achievements";
     public static string UNLOCKED = "unlocked";
     public static string SPARKLES = "sparkles";
+    public static string XP = "xp";
     public static string DAILY_STREAK = "dailyStreak";
 
     public static string PREFS_EQUIPPEDCHARACTER = "equippedCharacter";

@@ -48,7 +48,7 @@ public class LogsDisplayHandler : MonoBehaviour
 #if UNITY_EDITOR
             Debug.Log(e.Message + " Loading All");
 #else
-            AndroidPlugin.ShowToast(e.Message);
+            //AndroidPlugin.ShowToast(e.Message);
 #endif
         }
     }
